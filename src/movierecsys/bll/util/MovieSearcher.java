@@ -19,9 +19,10 @@ public class MovieSearcher
         List<Movie> movies = new ArrayList();
         List<Movie> foundMovies = new ArrayList();
         movies = searchBase;
+        
         for (Movie mov : movies) {
-            
-            if(mov.getTitle().toLowerCase().contains(query.toLowerCase())){
+         
+            if(mov.getTitle().replace(" ","").toLowerCase().trim().contains(query.toLowerCase())){
                 System.out.println(mov.getTitle().toLowerCase());
                 System.out.println(query.toLowerCase());
             foundMovies.add(mov);
